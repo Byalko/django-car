@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from .router import router
 
+from carapi import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('search/',views.snippet_list)
 ]
